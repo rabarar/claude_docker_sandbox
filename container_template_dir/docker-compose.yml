@@ -1,0 +1,24 @@
+
+services:
+  claude-dev:
+    build:
+      context: .
+      args:
+        UID: ${UID-1001}   # override with: export UID=$(id -u)
+        GID: ${GID-1001}   # override with: export GID=$(id -g)
+    image: claude-dev:latest
+    container_name: {{name}}
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./:/workspace
+      - ./{{name}}_dev:/home/dev   # persist gh & claude auth/config
+    environment:
+      # Optional: pass tokens via env or configure interactively in the container
+      GH_TOKEN: ${GH_TOKEN-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY-}
+
+volumes:
+  {{name}}_home:
+
