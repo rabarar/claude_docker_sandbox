@@ -10,6 +10,6 @@ This repo provides a lightweight way to create disposable, locked-down work envi
 - **Safer-by-default**: encourages filesystem isolation; easy to add network restrictions
 - **GitHub-friendly**: room to wire in `gh` auth and PR flows
 
-> “Stand up a new work environment by copying the `container_template_dir` to a new directory and stand it up with `build.sh`, `validate.sh`, and `authenticate.sh`.” :contentReference[oaicite:0]{index=0}
+> “Stand up a new work environment by copying the `container_template_dir` to a new directory and stand it up with `build.sh`, `validate.sh`, and `authenticate.sh`.” 
 
 ---
